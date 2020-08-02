@@ -32,3 +32,7 @@ export type Response<T> = {
   data: T
   error: Nullable<any>
 }
+
+export type FetchOptions = {
+  onlyNetwork: boolean
+}

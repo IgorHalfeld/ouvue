@@ -1,5 +1,13 @@
 import * as Cache from './cache'
-import { Options, Response, CacheInstance, CacheOptions, OuvueInstance, Nullable } from './types'
+import {
+  Options,
+  Response,
+  CacheInstance,
+  CacheOptions,
+  OuvueInstance,
+  Nullable,
+  FetchOptions
+} from './types'
 
 export function create<T>(options: Options<T>): OuvueInstance {
   const services: { [key: string]: any } = options.services ?? {}
@@ -7,11 +15,20 @@ export function create<T>(options: Options<T>): OuvueInstance {
 
   const cache: CacheInstance = Cache.create(cacheOpts.strategy)
 
-  async function fetch<K>(key: string, payload?: any): Promise<Response<Nullable<K>>> {
+  async function fetch<K>(key: string): Promise<Response<Nullable<K>>>
+  async function fetch<K>(
+    key: string,
+    payload?: Record<string, any>
+  ): Promise<Response<Nullable<K>>>
+  async function fetch<K>(
+    key: string,
+    payload?: Record<string, any>,
+    options?: FetchOptions
+  ): Promise<Response<Nullable<K>>> {
     const [entity, action] = key.trim().split('/')
     let data: Nullable<K>
 
-    if (cache.has(key)) {
+    if (cache.has(key) && !options?.onlyNetwork) {
       data = cache.get<K>(key)
       const response: Response<Nullable<K>> = {
         data,
@@ -21,7 +38,10 @@ export function create<T>(options: Options<T>): OuvueInstance {
     }
 
     if (!services[entity] || !services[entity][action]) {
-      if (process.env.NODE_ENV !== 'production') console.warn(`${key} not found on services object`)
+      if (process.env.NODE_ENV !== 'production') {
+        console.warn(`${key} not found on services object`)
+      }
+
       const response: Response<Nullable<K>> = {
         data: null,
         error: { message: `${key} not found on services object` }
