@@ -10,6 +10,15 @@
 
 Data fetching in REST made easy
 
+- 🔥 Suports Vue.js and React.js
+- 😙 Zero dependencies
+- 💅 Typescript suport
+- 😍 Code coverage with >90% 
+
+![demo](https://i.imgur.com/VfuQyWO.gif)
+
+this demo is the code from *usage section*
+
 ### Usage
 
 ```html
@@ -53,12 +62,6 @@ export default {
 ```
 
 check out [examples folder](https://github.com/IgorHalfeld/ouvue/tree/master/examples/)
-
-### Features
-
-- 🔥 Suports Vue.js and React.js
-- 😙 Zero dependencies
-
 
 ```javascript
 import something from 'mylib/dist/lib/something'
