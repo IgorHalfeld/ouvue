@@ -15,8 +15,6 @@ Simple and unopinionated service layer with cache out of the box for REST client
 - 💅 Typescript suport
 - 😍 Code coverage with >90% 
 
-this demo is the code from *usage section*
-
 ### Usage
 
 ```html
