@@ -1,6 +1,6 @@
 {
   "name": "ouvue",
-  "version": "0.0.0-alpha.1",
+  "version": "0.0.0-beta.1",
   "description": "",
   "keywords": [],
   "main": "dist/ouvue.umd.js",

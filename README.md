@@ -7,6 +7,7 @@
 [![Dev Dependencies](https://david-dm.org/IgorHalfeld/ouvue/dev-status.svg)](https://david-dm.org/IgorHalfeld/ouvue?type=dev)
 [![Donate](https://img.shields.io/badge/donate-paypal-blue.svg)](https://paypal.me/AJoverMorales)
 
+> ⚠️  Beta version!! Do not use in production!!
 
 Simple and unopinionated service layer with cache out of the box for REST clients 
 
