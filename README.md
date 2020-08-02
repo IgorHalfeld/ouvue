@@ -15,15 +15,16 @@ Simple and unopinionated service layer with cache out of the box for REST client
 - 💅 Typescript suport
 - 😍 Code coverage with >90% 
 
-![demo](https://i.imgur.com/3R59vIJ.gif)
-
 this demo is the code from *usage section*
 
 ### Usage
 
 ```html
 <template>
-  <h1>Basic Example with Vue.js</h1>
+  <div>
+    <h1>Basic Example with Vue.js</h1>
+    <p>Open your developer tools to see the requests on networking tab</p>
+  </div>
 </template>
 
 <script>
@@ -61,7 +62,7 @@ export default {
 </script>
 ```
 
-check out [examples folder](https://github.com/IgorHalfeld/ouvue/tree/master/examples/)
+See this code [live](https://ouvue-basic-vue-demo.surge.sh/) and check out [examples folder](https://github.com/IgorHalfeld/ouvue/tree/master/examples/)
 
 ```javascript
 import something from 'mylib/dist/lib/something'

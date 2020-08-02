@@ -1,5 +1,8 @@
 <template>
-  <h1>Basic Example with Vue.js</h1>
+  <div>
+    <h1>Basic Example with Vue.js</h1>
+    <p>Open your developer tools to see the requests on networking tab</p>
+  </div>
 </template>
 
 <script>
