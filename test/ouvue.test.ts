@@ -24,4 +24,13 @@ describe('Ouvue', () => {
   it('should create a valid instance', () => {
     expect(instance.fetch).toBeTruthy()
   })
+
+  it('should not broke when pass a unknown key', async () => {
+    const response = await instance.fetch<Services>('users/getAll')
+
+    expect(response).toEqual({
+      data: null,
+      error: { message: 'users/getAll not found on services object' }
+    })
+  })
 })

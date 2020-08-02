@@ -14,10 +14,21 @@ export interface CacheInstance {
 }
 
 export interface OuvueInstance {
-  fetch<T>(key: string, payload: Record<string, any>, options: any): Promise<T>
+  fetch<T>(
+    key: string,
+    payload?: Record<string, any>,
+    options?: any
+  ): Promise<Response<Nullable<T>>>
 }
+
+export type Nullable<T> = T | null
 
 export interface Strategy {
   [key: string]: any
   inmemory(): CacheInstance
+}
+
+export type Response<T> = {
+  data: T
+  error: Nullable<any>
 }
