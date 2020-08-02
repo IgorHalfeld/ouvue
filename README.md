@@ -8,14 +8,14 @@
 [![Donate](https://img.shields.io/badge/donate-paypal-blue.svg)](https://paypal.me/AJoverMorales)
 
 
-Data fetching in REST made easy
+Simple and unopinionated service layer with cache out of the box for REST clients 
 
 - 🔥 Suports Vue.js and React.js
 - 😙 Zero dependencies
 - 💅 Typescript suport
 - 😍 Code coverage with >90% 
 
-![demo](https://i.imgur.com/VfuQyWO.gif)
+![demo](https://i.imgur.com/3R59vIJ.gif)
 
 this demo is the code from *usage section*
 
