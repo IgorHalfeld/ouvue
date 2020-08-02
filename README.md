@@ -10,7 +10,7 @@
 
 Simple and unopinionated service layer with cache out of the box for REST clients 
 
-- 🔥 Suports Vue.js and React.js
+- 🔥 Suports Vue.js 2 and 3
 - 😙 Zero dependencies
 - 💅 Typescript suport
 - 😍 Code coverage with >90% 
