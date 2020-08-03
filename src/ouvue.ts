@@ -1,4 +1,5 @@
 import * as Cache from './cache'
+import OuvueRender from './components/OuvueRender'
 import {
   Options,
   Response,
@@ -71,5 +72,5 @@ export function create<T>(options: Options<T>): OuvueInstance {
     return result
   }
 
-  return { fetch }
+  return { fetch, OuvueRender: OuvueRender(fetch) }
 }
