@@ -21,7 +21,11 @@ export interface OuvueInstance {
     payload?: Record<string, any>,
     options?: any
   ): Promise<Response<Nullable<T>>>
-  OuvueRender: VueConstructor
+  OuvueRender: RenderComponentInstance
+}
+
+export interface RenderComponentInstance {
+  setup(): VueConstructor
 }
 
 export type Nullable<T> = T | null
