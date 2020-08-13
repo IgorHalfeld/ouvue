@@ -13,6 +13,12 @@ Simple and unopinionated service layer(with cache 🤩) for REST clients
 - 💅 Typescript suport
 - 😍 Code coverage with >90% 
 
+### Install
+
+```javascript
+import { create } from '@ouvue/core'
+```
+
 ### Usage
 
 ```html
@@ -59,10 +65,6 @@ export default {
 ```
 
 See this code [live](https://ouvue-basic-vue-demo.surge.sh/) and check out [examples folder](https://github.com/IgorHalfeld/ouvue/tree/master/examples/)
-
-```javascript
-import { create } from '@ouvue/core'
-```
 
 ### NPM scripts
 

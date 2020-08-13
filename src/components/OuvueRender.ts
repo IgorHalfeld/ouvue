@@ -17,7 +17,7 @@ interface Props {
 }
 
 export default function createOuvueRenderComponent(
-  fetch: OuvueInstance['fetch']
+  fn: OuvueInstance['fetch']
 ): RenderComponentInstance {
   function setup(): VueConstructor {
     return Vue.extend<Data, Methods, {}, Props>({
@@ -37,7 +37,7 @@ export default function createOuvueRenderComponent(
       methods: {
         async fetch(): Promise<void> {
           this.isLoading = true
-          const { data, error } = await fetch(this.action, this.payload)
+          const { data, error } = await fn(this.action, this.payload)
 
           this.data = data
           this.error = error

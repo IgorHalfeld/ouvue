@@ -18,10 +18,7 @@ Vue.config.productionTip = false
 
 const { OuvueRender } = api
 
-const comp = OuvueRender.setup()
-console.log('comp', comp)
-
-Vue.component('ouvue-render', comp)
+Vue.component('ouvue-render', OuvueRender.setup())
 
 new Vue({
   render: h => h(App)

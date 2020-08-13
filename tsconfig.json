@@ -12,7 +12,7 @@
     "emitDecoratorMetadata": true,
     "declarationDir": "dist/types",
     "outDir": "dist/lib",
-    "typeRoots": ["node_modules/@types", "vue"]
+    "typeRoots": ["node_modules/@types", "vue", "@vue/test-utils"]
   },
   "include": ["src"]
 }
