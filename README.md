@@ -2,7 +2,7 @@
 
 [![Travis](https://img.shields.io/travis/IgorHalfeld/ouvue.svg)](https://travis-ci.org/IgorHalfeld/ouvue)
 [![Coveralls](https://img.shields.io/coveralls/alexjoverm/typescript-library-starter.svg)](https://coveralls.io/github/alexjoverm/typescript-library-starter)
-[![Donate](https://img.shields.io/badge/donate-paypal-blue.svg)](https://paypal.me/AJoverMorales)
+[![Donate](https://img.shields.io/badge/donate-picpay-green.svg)](http://picpay.me/igorhalfeld)
 
 > ⚠️  Beta version!! Do not use in production!!
 
@@ -73,7 +73,3 @@ import { create } from '@ouvue/core'
  - `npm run build`: Generate bundles and typings, create docs
  - `npm run lint`: Lints code
  - `npm run commit`: Commit using conventional commit style ([husky](https://github.com/typicode/husky) will tell you to use it if you haven't :wink:)
-
-### Donate
-
-Do you like my job? [buy me a coffee 🚀](http://picpay.me/igorhalfeld)
