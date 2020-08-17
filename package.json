@@ -1,7 +1,7 @@
 {
   "name": "@ouvue/core",
   "version": "0.0.0-beta.1",
-  "description": "",
+  "description": "Simple and unopinionated service layer(with cache 🤩) for Vue REST clients",
   "keywords": [],
   "main": "dist/ouvue.umd.js",
   "module": "dist/ouvue.es5.js",

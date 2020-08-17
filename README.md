@@ -6,7 +6,7 @@
 
 > ⚠️  Beta version!! Do not use in production!!
 
-Simple and unopinionated service layer(with cache 🤩) for REST clients 
+Simple and unopinionated service layer(with cache 🤩) for Vue REST clients 
 
 - 🔥 Suports Vue.js 2 and 3 _(in progress on branch `next`)_
 - 😙 Zero dependencies
