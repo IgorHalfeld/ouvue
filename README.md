@@ -10,7 +10,7 @@ Simple and unopinionated service layer(with cache 🤩) for Vue REST clients
 
 - 🔥 Suports Vue.js 2 and 3 _(in progress on branch `next`)_
 - 😙 Zero dependencies
-- 💅 Typescript suport
+- 💅 Typescript support
 - 😍 Code coverage with >90% 
 
 ### Install
