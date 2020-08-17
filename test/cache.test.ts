@@ -1,5 +1,5 @@
 import * as Cache from '../src/cache'
-import { CacheInstance } from '../dist/types/types'
+import { CacheInstance } from '../src/types'
 
 let data: CacheInstance
 
