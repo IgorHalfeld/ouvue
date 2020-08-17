@@ -9,6 +9,8 @@ node_js:
   - '11'
   - '8'
   - '6'
+before_script:
+  - npm install -g jest
 script:
   - npm run test:prod && npm run build
 after_success:
