@@ -75,8 +75,7 @@ See this code [live](https://ouvue-basic-vue-demo.surge.sh/) and check out [exam
     ```js
       key: e.g.     'users/create'
       payload: e.g. { name: 'Igor' }
-      options: e.g. { onlyNetwork: true } // if exists on cache, call the network and update the
-      cache
+      options: e.g. { onlyNetwork: true } // if exists on cache, call the network and update the cache
     ```
 - `<ouvue-render :action="action" :payload="payload" />` - fetch executes a service but with component-based approach
     ```html
