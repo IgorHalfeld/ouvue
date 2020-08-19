@@ -21,15 +21,7 @@ import { create } from '@ouvue/core'
 
 ### Usage
 
-```html
-<template>
-  <div>
-    <h1>Basic Example with Vue.js</h1>
-    <p>Open your developer tools to see the requests on networking tab</p>
-  </div>
-</template>
-
-<script>
+```js
 import { create } from '@ouvue/core'
 
 const services = {
@@ -61,10 +53,36 @@ export default {
     }
   }
 }
-</script>
 ```
 
 See this code [live](https://ouvue-basic-vue-demo.surge.sh/) and check out [examples folder](https://github.com/IgorHalfeld/ouvue/tree/master/examples/)
+
+### API
+
+- `create(options)` - create instance of `Ouvue`
+  _options signature_
+    ```js
+    {
+      services,
+      cache: {
+        strategy: 'inmemory' // default
+      }
+    }
+    ```
+`create` return an object with a `fetch` function and `OuvueRender` component
+
+- `fetch(key, payload, options)` - fetch executes a service.
+    ```js
+      key: e.g.     'users/create'
+      payload: e.g. { name: 'Igor' }
+      options: e.g. { onlyNetwork: true } // if exists on cache, call the network and update the
+      cache
+    ```
+- `<ouvue-render :action="action" :payload="payload" />` - fetch executes a service but with component-based approach
+    ```html
+      e.g.
+      <ouvue-render action="users/create" :payload="{ name: 'Igor' }" />
+    ```
 
 ### NPM scripts
 
