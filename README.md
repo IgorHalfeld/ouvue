@@ -28,6 +28,7 @@ const services = {
   posts: {
     async getAll () {
       console.log('Getting posts...')
+      // You don't need to put on a try/catch, Ouvue does it for you 😉
       const res = await window.fetch('https://jsonplaceholder.typicode.com/posts')
       const result = await res.json()
 
