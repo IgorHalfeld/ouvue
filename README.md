@@ -78,10 +78,13 @@ See this code [live](https://ouvue-basic-vue-demo.surge.sh/) and check out [exam
       payload: e.g. { name: 'Igor' }
       options: e.g. { onlyNetwork: true } // if exists on cache, call the network and update the cache
     ```
-- `<ouvue-render :action="action" :payload="payload" />` - fetch executes a service but with component-based approach
+- `<ouvue-render :action="action" :payload="payload" :options="options" />` - fetch executes a service but with component-based approach
     ```html
       e.g.
-      <ouvue-render action="users/create" :payload="{ name: 'Igor' }" />
+      <ouvue-render
+        action="users/create"
+        :payload="{ name: 'Igor' }"
+        :options="{ onlyNetwork: true }" />
     ```
 
 ### NPM scripts

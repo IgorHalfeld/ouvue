@@ -14,6 +14,7 @@ interface Methods {
 interface Props {
   action: string
   payload: Record<string, any>
+  options: Record<string, any>
 }
 
 export default function createOuvueRenderComponent(fn: OuvueInstance['fetch']): VueConstructor {
@@ -21,7 +22,8 @@ export default function createOuvueRenderComponent(fn: OuvueInstance['fetch']): 
     name: 'OuvueRender',
     props: {
       action: { type: String, required: true },
-      payload: { type: Object, default: () => ({}) }
+      payload: { type: Object, default: () => ({}) },
+      options: { type: Object, default: () => ({}) }
     },
     data: () => ({
       data: null,
@@ -34,7 +36,7 @@ export default function createOuvueRenderComponent(fn: OuvueInstance['fetch']): 
     methods: {
       async fetch(): Promise<void> {
         this.isLoading = true
-        const { data, error } = await fn(this.action, this.payload)
+        const { data, error } = await fn(this.action, this.payload, this.options)
 
         this.data = data
         this.error = error

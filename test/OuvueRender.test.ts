@@ -17,10 +17,11 @@ interface Services {
   users: UserService
 }
 
+let user = { id: 444, name: 'Test' }
 let instance: OuvueInstance
 const services: Services = {
   users: {
-    getAll: () => Promise.resolve([{ id: 444, name: 'Test' }]),
+    getAll: () => Promise.resolve([user]),
     throwAnError: () => {
       throw new Error('UserService - error on users service')
     }
@@ -46,6 +47,31 @@ describe('OuvueRender', () => {
 
     const text = JSON.parse(wrapper.text())
     expect(text).toEqual([{ id: 444, name: 'Test' }])
+  })
+
+  it('should respect options received by props', async () => {
+    const wrapper = shallowMount<Vue & { fetch(): Promise<void> }>(instance.OuvueRender, {
+      propsData: {
+        action: 'users/getAll',
+        options: { onlyNetwork: true }
+      },
+      scopedSlots: {
+        default: '<pre slot-scope="{ data }">{{ data }}</pre>'
+      }
+    })
+
+    await wrapper.vm.fetch()
+
+    const text1 = JSON.parse(wrapper.text())
+    expect(text1).toEqual([{ id: 444, name: 'Test' }])
+
+    const u = { ...user, id: 555 }
+    user = u
+
+    await wrapper.vm.fetch()
+
+    const text2 = JSON.parse(wrapper.text())
+    expect(text2).toEqual([{ id: 555, name: 'Test' }])
   })
 
   it('should return a error from entity/action', async () => {
