@@ -1,4 +1,14 @@
-import { VueConstructor } from 'vue'
+export interface OuvueResult {
+  data: any
+  isLoading: boolean
+  error: any
+}
+
+export interface Props {
+  action: string
+  payload: Record<string, any>
+  options: FetchOptions
+}
 
 export type CacheOptions = {
   strategy: string
@@ -21,7 +31,7 @@ export interface OuvueInstance {
     payload?: Record<string, any>,
     options?: any
   ): Promise<Response<Nullable<T>>>
-  OuvueRender: VueConstructor
+  useOuvue: (props: Props) => OuvueResult
 }
 
 export type Nullable<T> = T | null

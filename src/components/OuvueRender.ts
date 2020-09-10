@@ -1,56 +1,29 @@
-import Vue, { CreateElement, VNode, VueConstructor } from 'vue'
-import { OuvueInstance } from '../types'
+import { reactive, onBeforeMount } from 'vue'
+import { OuvueInstance, OuvueResult, Props } from '../types'
 
-interface Data {
-  data: any
-  isLoading: boolean
-  error: any
-}
-
-interface Methods {
-  fetch(): void
-}
-
-interface Props {
-  action: string
-  payload: Record<string, any>
-  options: Record<string, any>
-}
-
-export default function createOuvueRenderComponent(fn: OuvueInstance['fetch']): VueConstructor {
-  return Vue.extend<Data, Methods, {}, Props>({
-    name: 'OuvueRender',
-    props: {
-      action: { type: String, required: true },
-      payload: { type: Object, default: () => ({}) },
-      options: { type: Object, default: () => ({}) }
-    },
-    data: () => ({
-      data: null,
+export default function createUseOuvue(fn: OuvueInstance['fetch']): (props: Props) => OuvueResult {
+  function useOuvue(props: Props): OuvueResult {
+    const state = reactive<OuvueResult>({
       isLoading: false,
+      data: null,
       error: null
-    }),
-    created() {
-      this.fetch()
-    },
-    methods: {
-      async fetch(): Promise<void> {
-        this.isLoading = true
-        const { data, error } = await fn(this.action, this.payload, this.options)
+    })
 
-        this.data = data
-        this.error = error
-        this.isLoading = false
-      }
-    },
-    render(createElement: CreateElement): VNode {
-      const slot = this.$scopedSlots.default!({
-        data: this.data,
-        isLoading: this.isLoading,
-        error: this.error
-      }) as any
+    onBeforeMount(() => {
+      fetch()
+    })
 
-      return createElement('div', slot)
+    async function fetch(): Promise<void> {
+      state.isLoading = true
+      const { data, error } = await fn(props.action, props.payload, props.options)
+
+      state.data = data
+      state.error = error
+      state.isLoading = false
     }
-  })
+
+    return state
+  }
+
+  return useOuvue
 }

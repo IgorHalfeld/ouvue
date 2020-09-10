@@ -120,7 +120,7 @@
     "tslint-config-standard": "^8.0.1",
     "typedoc": "^0.12.0",
     "typescript": "^3.0.3",
-    "vue": "^2.6.11",
+    "vue": "^3.0.0-rc.1",
     "vue-jest": "^3.0.6",
     "vue-template-compiler": "^2.6.11"
   },
